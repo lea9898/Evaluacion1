@@ -1,8 +1,3 @@
-/* =============================================================
-   Mantenedor de PRODUCTOS — Panel de administración
-   Permite Crear, Listar, Editar y Eliminar productos.
-   ============================================================= */
-
 function obtenerProductosAdmin() {
   let datosGuardados = localStorage.getItem("productos");
   if (!datosGuardados) {
