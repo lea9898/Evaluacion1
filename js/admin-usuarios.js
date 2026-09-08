@@ -1,11 +1,3 @@
-/* =============================================================
-   Mantenedor de USUARIOS — Panel de administración
-   Permite Crear, Listar, Editar y Eliminar usuarios, con roles
-   (Administrador / Vendedor / Cliente).
-   Usa las funciones de js/validaciones.js y js/regiones.js,
-   que deben cargarse antes que este archivo.
-   ============================================================= */
-
 let usuariosIniciales = [
   {
     run: "19011022K", nombre: "Camila", apellidos: "Rojas Peña",
@@ -188,7 +180,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let comuna = document.getElementById("comuna-usuario");
   let direccion = document.getElementById("direccion-usuario");
 
-  // Validación mientras se escribe, reutilizando las funciones de validaciones.js
+ 
   run.addEventListener("input", function () {
     if (!run.disabled) {
       validarRutInput(run);
@@ -234,7 +226,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let okComuna = validarRequerido(comuna, "La comuna");
     let okDireccion = validarRequeridoYMax(direccion, 300, "La dirección");
 
-    // Revisamos que el RUN no esté repetido (salvo que sea el mismo que estamos editando)
+    
     let okRunRepetido = true;
     for (let i = 0; i < usuarios.length; i++) {
       if (usuarios[i].run === runValor && usuarios[i].run !== usuarioEditandoRun) {
@@ -271,14 +263,14 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     if (usuarioEditandoRun) {
-      // Modo edición: reemplazamos el usuario que tenía ese RUN
+     
       for (let i = 0; i < usuarios.length; i++) {
         if (usuarios[i].run === usuarioEditandoRun) {
           usuarios[i] = datosUsuario;
         }
       }
     } else {
-      // Modo creación: agregamos el usuario nuevo
+     
       usuarios.push(datosUsuario);
     }
 
