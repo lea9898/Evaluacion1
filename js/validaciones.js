@@ -1,14 +1,4 @@
-/* =============================================================
-   Validaciones de formularios — Ferretería Los Maestros
-   Valida mientras el usuario escribe (evento "input") y muestra
-   mensajes de error debajo de cada campo.
-   Necesita que js/regiones.js esté cargado antes que este archivo.
-   ============================================================= */
-
-// Correos permitidos: solo estos 3 dominios
 let dominiosPermitidos = ["@duoc.cl", "@profesor.duoc.cl", "@gmail.com"];
-
-/* ---------- Función que muestra u oculta el mensaje de error ---------- */
 
 function marcarCampo(input, mensaje) {
   let contenedor = input.closest(".form-field");
@@ -44,7 +34,7 @@ function mostrarAlertaFormulario(form, tipo, texto) {
   alerta.classList.add(tipo);
 }
 
-/* ---------- Validaciones individuales ---------- */
+
 
 function validarRequerido(input, etiqueta) {
   let valor = input.value.trim();
@@ -65,7 +55,7 @@ function validarRequeridoYMax(input, max, etiqueta) {
   return marcarCampo(input, "");
 }
 
-// Revisa si un correo termina en alguno de los dominios permitidos
+
 function tieneDominioPermitido(correo) {
   let correoMinuscula = correo.toLowerCase();
   for (let i = 0; i < dominiosPermitidos.length; i++) {
@@ -120,7 +110,7 @@ function validarConfirmPassword(inputPass, inputConfirm) {
   return marcarCampo(inputConfirm, "");
 }
 
-// Revisa que el texto tenga solo números, y al final opcionalmente una "K"
+
 function esFormatoRutValido(rut) {
   for (let i = 0; i < rut.length; i++) {
     let caracter = rut.charAt(i);
@@ -134,7 +124,7 @@ function esFormatoRutValido(rut) {
   return true;
 }
 
-// Calcula el dígito verificador de un RUT chileno (algoritmo módulo 11)
+
 function validarRut(rut) {
   if (!esFormatoRutValido(rut)) {
     return false;
@@ -183,7 +173,7 @@ function validarRutInput(input) {
   return marcarCampo(input, "");
 }
 
-/* ---------- Región / comuna dinámicas (formulario de registro) ---------- */
+
 
 function inicializarRegionComuna() {
   if (typeof poblarRegiones !== "function") {
@@ -194,7 +184,7 @@ function inicializarRegionComuna() {
   });
 }
 
-/* ---------- Formulario: Iniciar sesión ---------- */
+
 
 function inicializarFormLogin() {
   let form = document.getElementById("form-login");
@@ -225,7 +215,7 @@ function inicializarFormLogin() {
   });
 }
 
-/* ---------- Formulario: Registro de usuario ---------- */
+
 
 function inicializarFormRegistro() {
   let form = document.getElementById("form-registro");
@@ -310,7 +300,7 @@ function inicializarFormRegistro() {
   });
 }
 
-/* ---------- Formulario: Contacto ---------- */
+
 
 function inicializarFormContacto() {
   let form = document.getElementById("form-contacto");
