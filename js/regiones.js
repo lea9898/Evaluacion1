@@ -4,11 +4,10 @@ let regionesComunas = {
   "Región Metropolitana": ["Santiago", "Maipú", "Huechuraba", "Puente Alto"]
 };
 
-// Nombres de las regiones (para recorrerlas con un for normal)
+
 let nombresRegiones = Object.keys(regionesComunas);
 
-/* Llena un <select> de región y prepara el cambio de comuna cuando
-   el usuario elige una región. Uso: poblarRegiones("region", "comuna") */
+
 function poblarRegiones(idSelectRegion, idSelectComuna, funcionExtra) {
   let selectReg = document.getElementById(idSelectRegion);
   let selectCom = document.getElementById(idSelectComuna);
@@ -44,7 +43,7 @@ function poblarRegiones(idSelectRegion, idSelectComuna, funcionExtra) {
   });
 }
 
-/* Selecciona programáticamente una región y su comuna (se usa al editar) */
+
 function seleccionarRegionComuna(idSelectRegion, idSelectComuna, region, comuna) {
   let selectReg = document.getElementById(idSelectRegion);
   let selectCom = document.getElementById(idSelectComuna);
