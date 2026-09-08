@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ferretería Los Maestros - Detalle del producto</title>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="ferreteria.html" class="brand">
+        <img src="images/logo.svg" alt="Logo Ferretería Los Maestros" class="brand-logo">
+        <span class="brand-name">Ferretería <strong>Los Maestros</strong></span>
+      </a>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="ferreteria.html">Inicio</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="novedades.html">Novedades</a>
+        <a href="catalogo.html" class="active">Catálogo</a>
+        <a href="carrito.html">🛒 Cotizador (<span class="cart-count">0</span>)</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="login.html" class="btn-ghost">Ingresar</a>
+        <a href="registro.html" class="btn-solid">Regístrate</a>
+        <a href="admin.html" class="nav-admin">Admin</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <p><a href="catalogo.html">&larr; Volver al catálogo</a></p>
+    <section id="detalle-producto" style="margin-top:16px;"></section>
+
+    <section id="relacionados-wrapper" style="margin-top:44px;">
+      <h2 class="page-title" style="font-size:1.3rem;">Productos relacionados</h2>
+      <div id="contenedor-relacionados" class="grid-productos"></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-brand">
+        <strong>Ferretería Los Maestros</strong>
+        <p>22 años abasteciendo a contratistas y particulares en La Serena, Región de Coquimbo.</p>
+      </div>
+      <ul class="footer-links">
+        <li><a href="ferreteria.html">Inicio</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Ferretería Los Maestros. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/productos.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/detalle-producto.js"></script>
+</body>
+</html>
