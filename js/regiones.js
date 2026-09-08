@@ -1,8 +1,3 @@
-/* =============================================================
-   Datos de Región / Comuna, compartidos entre registro.html
-   y el mantenedor de usuarios del panel de administración.
-   ============================================================= */
-
 let regionesComunas = {
   "Región de Coquimbo": ["La Serena", "Coquimbo", "Ovalle", "Vicuña"],
   "Región de Valparaíso": ["Valparaíso", "Viña del Mar", "Quilpué"],
