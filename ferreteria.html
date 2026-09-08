@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ferretería Los Maestros - Inicio</title>
   <meta name="description" content="Ferretería Los Maestros: materiales de construcción, herramientas y áridos en La Serena.">
+  <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
   <header class="site-header">
@@ -18,6 +19,7 @@
         <a href="nosotros.html">Nosotros</a>
         <a href="novedades.html">Novedades</a>
         <a href="catalogo.html">Catálogo</a>
+        <a href="carrito.html">🛒 Cotizador (<span class="cart-count">0</span>)</a>
         <a href="contacto.html">Contacto</a>
       </nav>
       <div class="nav-actions">
@@ -27,13 +29,60 @@
       </div>
     </div>
   </header>
- 
-<footer>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <span class="hero-eyebrow">Ferretería en La Serena</span>
+        <h1>Todo para tu obra, en un solo lugar</h1>
+        <p>Materiales de construcción, morteros y áridos con stock actualizado y despacho a todo Coquimbo. 22 años trabajando junto a contratistas y particulares.</p>
+        <a href="catalogo.html" class="btn">Ver catálogo de productos</a>
+        <ul class="hero-stats">
+          <li><strong>22</strong><span>años de trayectoria</span></li>
+          <li><strong>800+</strong><span>productos disponibles</span></li>
+          <li><strong>100%</strong><span>despacho regional</span></li>
+        </ul>
+      </div>
+      <div class="hero-image">
+        <img src="images/logo.svg" alt="Ferretería Los Maestros">
+      </div>
+    </section>
+
+    <section id="productos-destacados">
+      <h2 class="page-title">Productos destacados</h2>
+      <p class="page-subtitle">Una muestra de lo que encontrarás en nuestro catálogo completo.</p>
+      <div id="contenedor-productos" class="grid-productos"></div>
+    </section>
+
+    <section id="por-que-elegirnos">
+      <h2 class="page-title">¿Por qué comprar con nosotros?</h2>
+      <ul class="info-list">
+        <li><strong>Atención cercana</strong>Somos un negocio familiar: te asesoramos según lo que necesita tu proyecto.</li>
+        <li><strong>Stock real</strong>El catálogo refleja el stock disponible en bodega, actualizado por nuestro equipo.</li>
+        <li><strong>Despacho regional</strong>Cotiza online y coordina el retiro o despacho en La Serena y alrededores.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
     <div class="footer-container">
       <div class="footer-brand">
         <strong>Ferretería Los Maestros</strong>
         <p>22 años abasteciendo a contratistas y particulares en La Serena, Región de Coquimbo.</p>
       </div>
-        </footer>
- </body>
+      <ul class="footer-links">
+        <li><a href="ferreteria.html">Inicio</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Ferretería Los Maestros. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/productos.js"></script>
+  <script src="js/main.js"></script>
+</body>
 </html>
