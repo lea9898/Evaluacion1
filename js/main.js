@@ -1,7 +1,3 @@
-/* =============================================================
-   Catálogo, carrito y contador del carrito
-   ============================================================= */
-
 document.addEventListener("DOMContentLoaded", function () {
   if (document.getElementById("contenedor-productos")) {
     renderizarCatalogo();
