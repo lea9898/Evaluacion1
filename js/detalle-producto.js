@@ -1,8 +1,3 @@
-/* =============================================================
-   Vista de detalle de un producto (imagen, precio, cantidad,
-   agregar al carrito y productos relacionados)
-   ============================================================= */
-
 document.addEventListener("DOMContentLoaded", function () {
   let contenedor = document.getElementById("detalle-producto");
   if (!contenedor) {
