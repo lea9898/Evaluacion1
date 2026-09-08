@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ferretería Los Maestros - Administración</title>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <a href="ferreteria.html" class="admin-brand">
+        <img src="images/logo.svg" alt="Logo Ferretería Los Maestros">
+        <span>Los Maestros<br><small>Panel Admin</small></span>
+      </a>
+      <nav aria-label="Navegación del panel de administración">
+        <a href="#" id="tab-productos" class="active" onclick="cambiarPanelAdmin('productos');return false;">📦 Productos</a>
+        <a href="#" id="tab-usuarios" onclick="cambiarPanelAdmin('usuarios');return false;">👤 Usuarios</a>
+      </nav>
+      <div class="volver">
+        <a href="ferreteria.html">&larr; Volver al sitio público</a>
+      </div>
+    </aside>
+
+    <main class="admin-content">
+
+      <!-- ===================== PANEL PRODUCTOS ===================== -->
+      <section id="panel-productos">
+        <h1 class="page-title">Mantenedor de productos</h1>
+        <p class="page-subtitle">Crea, edita o elimina productos del catálogo. El código se genera automáticamente al crear.</p>
+
+        <form id="form-producto-admin">
+          <input type="hidden" id="producto-editando-id">
+          <div class="form-field">
+            <label for="nombre-prod">Nombre del producto</label>
+            <input type="text" id="nombre-prod" maxlength="100" required>
+          </div>
+          <div class="form-field">
+            <label for="cat-prod">Categoría</label>
+            <select id="cat-prod" required>
+              <option value="">-- Seleccione --</option>
+              <option value="Mat. Construcción">Mat. Construcción</option>
+              <option value="Herramientas">Herramientas</option>
+              <option value="Pinturas">Pinturas</option>
+              <option value="Ferretería General">Ferretería General</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="precio-prod">Precio (CLP)</label>
+            <input type="number" id="precio-prod" min="0" step="1" required>
+          </div>
+          <div class="form-field">
+            <label for="stock-prod">Stock</label>
+            <input type="number" id="stock-prod" min="0" step="1" required>
+          </div>
+          <div class="form-field">
+            <label for="stock-critico-prod">Stock crítico (opcional)</label>
+            <input type="number" id="stock-critico-prod" min="0" step="1" placeholder="Ej: 10">
+          </div>
+          <div class="form-field">
+            <label for="imagen-prod">URL de la imagen (opcional)</label>
+            <input type="url" id="imagen-prod" placeholder="https://...">
+          </div>
+          <div class="form-field" style="grid-column:1 / -1;">
+            <label for="descripcion-prod">Descripción (opcional)</label>
+            <textarea id="descripcion-prod" maxlength="500" rows="2"></textarea>
+          </div>
+          <div class="form-actions" style="grid-column:1 / -1;display:flex;gap:10px;">
+            <button type="submit" id="btn-guardar-prod">Guardar producto</button>
+            <button type="button" id="btn-cancelar-prod" class="btn-outline" style="display:none;" onclick="cancelarEdicionProducto()">Cancelar edición</button>
+          </div>
+        </form>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Imagen</th>
+                <th>Código</th>
+                <th>Nombre</th>
+                <th>Categoría</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="tbody-productos"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ===================== PANEL USUARIOS ===================== -->
+      <section id="panel-usuarios" style="display:none;">
+        <h1 class="page-title">Mantenedor de usuarios</h1>
+        <p class="page-subtitle">Administra las cuentas del sistema y su rol: Administrador, Vendedor o Cliente.</p>
+
+        <form id="form-usuario-admin" novalidate>
+          <input type="hidden" id="usuario-editando-run">
+          <div class="form-alert"></div>
+
+          <div class="form-field">
+            <label for="run-usuario">RUN (sin puntos ni guion)</label>
+            <input type="text" id="run-usuario" maxlength="9" placeholder="Ej: 19011022K" required>
+            <span class="mensaje-error"></span>
+          </div>
+          <div class="form-field">
+            <label for="nombre-usuario">Nombre</label>
+            <input type="text" id="nombre-usuario" maxlength="50" required>
+            <span class="mensaje-error"></span>
+          </div>
+          <div class="form-field">
+            <label for="apellidos-usuario">Apellidos</label>
+            <input type="text" id="apellidos-usuario" maxlength="100" required>
+            <span class="mensaje-error"></span>
+          </div>
+          <div class="form-field">
+            <label for="correo-usuario">Correo</label>
+            <input type="email" id="correo-usuario" maxlength="100" placeholder="usuario@duoc.cl" required>
+            <span class="mensaje-error"></span>
+          </div>
+          <div class="form-field">
+            <label for="fecha-nacimiento-usuario">Fecha de nacimiento (opcional)</label>
+            <input type="date" id="fecha-nacimiento-usuario">
+          </div>
+          <div class="form-field">
+            <label for="tipo-usuario">Tipo de usuario</label>
+            <select id="tipo-usuario" required>
+              <option value="">-- Seleccione --</option>
+              <option value="Administrador">Administrador</option>
+              <option value="Vendedor">Vendedor</option>
+              <option value="Cliente">Cliente</option>
+            </select>
+            <span class="mensaje-error"></span>
+          </div>
+          <div class="form-field">
+            <label for="region-usuario">Región</label>
+            <select id="region-usuario" required>
+              <option value="">-- Seleccione la región --</option>
+            </select>
+            <span class="mensaje-error"></span>
+          </div>
+          <div class="form-field">
+            <label for="comuna-usuario">Comuna</label>
+            <select id="comuna-usuario" required>
+              <option value="">-- Seleccione la comuna --</option>
+            </select>
+            <span class="mensaje-error"></span>
+          </div>
+          <div class="form-field" style="grid-column:1 / -1;">
+            <label for="direccion-usuario">Dirección</label>
+            <input type="text" id="direccion-usuario" maxlength="300" required>
+            <span class="mensaje-error"></span>
+          </div>
+
+          <div class="form-actions" style="grid-column:1 / -1;display:flex;gap:10px;">
+            <button type="submit" id="btn-guardar-usuario">Guardar usuario</button>
+            <button type="button" id="btn-cancelar-usuario" class="btn-outline" style="display:none;" onclick="cancelarEdicionUsuario()">Cancelar edición</button>
+          </div>
+        </form>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>RUN</th>
+                <th>Nombre completo</th>
+                <th>Correo</th>
+                <th>Tipo</th>
+                <th>Región / Comuna</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="tbody-usuarios"></tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="js/productos.js"></script>
+  <script src="js/regiones.js"></script>
+  <script src="js/validaciones.js"></script>
+  <script src="js/admin.js"></script>
+  <script src="js/admin-usuarios.js"></script>
+</body>
+</html>
