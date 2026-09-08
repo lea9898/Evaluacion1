@@ -1,0 +1,67 @@
+:root {
+  --color-navy: #10233f;
+  --color-navy-light: #1b365d;
+  --color-orange: #e06d14;
+  --color-orange-dark: #b8560e;
+  --color-orange-light: #fff2e6;
+  --color-bg: #f3f5f8;
+  --color-surface: #ffffff;
+  --color-text: #242b33;
+  --color-text-muted: #667085;
+  --color-border: #e2e6ec;
+  --color-success: #2f9e58;
+  --color-danger: #d64545;
+
+  --font-heading: 'Inter', 'Segoe UI', sans-serif;
+  --font-body: 'Inter', 'Segoe UI', sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+
+  --shadow-sm: 0 1px 3px rgba(16, 35, 63, 0.08);
+  --shadow-md: 0 8px 24px rgba(16, 35, 63, 0.1);
+  --shadow-lg: 0 16px 40px rgba(16, 35, 63, 0.16);
+
+  --transition: 180ms ease;
+}
+
+.nav-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.main-nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.main-nav a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.92rem;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition), color var(--transition);
+  white-space: nowrap;
+}
+.main-nav a.active {
+  color: #fff;
+  background-color: var(--color-orange);
+}
+.nav-actions a {
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 999px;
+  transition: transform var(--transition), background-color var(--transition);
+  white-space: nowrap;
+}

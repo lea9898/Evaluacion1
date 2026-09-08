@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ferretería Los Maestros - Contacto</title>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="ferreteria.html" class="brand">
+        <img src="images/logo.svg" alt="Logo Ferretería Los Maestros" class="brand-logo">
+        <span class="brand-name">Ferretería <strong>Los Maestros</strong></span>
+      </a>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="ferreteria.html">Inicio</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="novedades.html">Novedades</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="carrito.html">Cotizador (<span class="cart-count">0</span>)</a>
+        <a href="contacto.html" class="active">Contacto</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="login.html" class="btn-ghost">Ingresar</a>
+        <a href="registro.html" class="btn-solid">Regístrate</a>
+        <a href="admin.html" class="nav-admin">Admin</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="page-title" style="text-align:center;">Contáctanos</h1>
+    <p class="page-subtitle" style="text-align:center;margin-left:auto;margin-right:auto;">¿Tienes dudas sobre algún producto o tu proyecto? Escríbenos.</p>
+
+    <form id="form-contacto" novalidate>
+      <div class="form-alert"></div>
+
+      <div class="form-field">
+        <label for="nombre-contacto">Nombre completo</label>
+        <input type="text" id="nombre-contacto" maxlength="100" required>
+        <span class="mensaje-error"></span>
+      </div>
+
+      <div class="form-field">
+        <label for="correo-contacto">Correo (opcional)</label>
+        <input type="email" id="correo-contacto" maxlength="100" placeholder="tucorreo@duoc.cl">
+        <span class="mensaje-error"></span>
+        <span class="mensaje-ayuda">Solo @duoc.cl, @profesor.duoc.cl o @gmail.com</span>
+      </div>
+
+      <div class="form-field">
+        <label for="mensaje-contacto">Mensaje</label>
+        <textarea id="mensaje-contacto" maxlength="500" rows="5" required></textarea>
+        <span class="mensaje-error"></span>
+      </div>
+
+      <button type="submit">Enviar mensaje</button>
+    </form>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-brand">
+        <strong>Ferretería Los Maestros</strong>
+        <p>22 años abasteciendo a contratistas y particulares en La Serena, Región de Coquimbo.</p>
+      </div>
+      <ul class="footer-links">
+        <li><a href="ferreteria.html">Inicio</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Ferretería Los Maestros. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/validaciones.js"></script>
+</body>
+</html>
