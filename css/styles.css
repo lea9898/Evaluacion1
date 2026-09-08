@@ -1,8 +1,3 @@
-/* ===============
-   Hoja de estilos general
-   (Estilo simple, inspirado en Bootstrap: colores planos, poco sombreado,
-   fuentes del sistema y componentes básicos)
-   ================ */
 
 * {
   box-sizing: border-box;
@@ -36,7 +31,7 @@ img {
   display: block;
 }
 
-/* ---------- Header / navegación ---------- */
+
 
 .site-header {
   position: sticky;
@@ -143,7 +138,7 @@ img {
   border: 1px dashed rgba(255, 255, 255, 0.35);
 }
 
-/* ---------- Layout general ---------- */
+
 
 main {
   flex: 1;
@@ -168,7 +163,7 @@ section + section {
   margin-top: 40px;
 }
 
-/* ---------- Hero (página principal) ---------- */
+
 
 .hero {
   display: grid;
@@ -244,7 +239,7 @@ section + section {
   margin: 0 auto;
 }
 
-/* ---------- Botones ---------- */
+
 
 button,
 .btn {
@@ -276,7 +271,7 @@ button:hover,
   color: #fff;
 }
 
-/* ---------- Tarjetas de producto ---------- */
+
 
 .grid-productos {
   display: grid;
@@ -344,7 +339,7 @@ button:hover,
   margin-top: auto;
 }
 
-/* ---------- Secciones "Nosotros" / info con listas ---------- */
+
 
 .info-list {
   list-style: none;
@@ -367,7 +362,7 @@ button:hover,
   margin-bottom: 2px;
 }
 
-/* ---------- Artículos / novedades ---------- */
+
 
 .card-noticia {
   background: #ffffff;
@@ -389,7 +384,7 @@ button:hover,
   text-transform: uppercase;
 }
 
-/* ---------- Formularios ---------- */
+
 
 form {
   background: #ffffff;
@@ -483,7 +478,7 @@ form button[type="submit"] {
   width: 100%;
 }
 
-/* ---------- Carrito / cotizador ---------- */
+
 
 .item-carrito {
   background: #ffffff;
@@ -536,7 +531,7 @@ form button[type="submit"] {
   border: 1px dashed #dee2e6;
 }
 
-/* ---------- Panel de administración ---------- */
+
 
 .admin-layout {
   display: grid;
@@ -628,7 +623,7 @@ form button[type="submit"] {
   grid-column: -2 / -1;
 }
 
-/* ---------- Tablas ---------- */
+
 
 .table-wrapper {
   background: #ffffff;
@@ -665,7 +660,7 @@ tbody tr:last-child td {
   border-bottom: none;
 }
 
-/* ---------- Footer ---------- */
+
 
 footer {
   background-color: #0d1b2a;
@@ -719,7 +714,7 @@ footer {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* ---------- Utilidades ---------- */
+
 
 .badge {
   display: inline-block;
@@ -733,7 +728,7 @@ footer {
 .badge-vendedor { background: #fff3cd; color: #664d03; }
 .badge-admin { background: #f8d7da; color: #842029; }
 
-/* ---------- Responsivo ---------- */
+
 
 @media (max-width: 900px) {
   .hero {
